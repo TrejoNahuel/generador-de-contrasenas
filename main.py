@@ -1,10 +1,12 @@
 import random
 
-# variables
+# --- Definición de variables y caracteres ---
+# Creamos variables con los sets de caracteres para cada tipo de contraseña.
 caracteres_simples = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-caracteres_complejos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;':\",./<>?`~"# solicitud
+caracteres_complejos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;':\",./<>?`~"
 
-# Usar un bucle while para pedir la opción hasta que sea válida
+# --- Lógica de la elección de dificultad ---
+# Usamos un bucle 'while' para pedir una opción hasta que sea válida.
 opcion_valida = False
 
 while not opcion_valida:
@@ -19,13 +21,18 @@ while not opcion_valida:
     else:
         print("Opción no válida. Por favor, elige 1 o 2.")
 
+# --- Lógica de la construcción de la contraseña ---
+# Pedimos la longitud al usuario.
+longitud = int(input("Ingrese el tamaño de su contraseña: "))
 
-#cliclo principal
-longitud = int(input("Ingrese el tamanio de su contasenia: "))
-
+# Creamos una variable vacía para guardar la contraseña.
 contrasena = ""
+
+# Usamos un bucle 'for' para construir la contraseña carácter por carácter.
 for i in range(longitud):
     contrasena += random.choice(caracteres)
 
-
+# --- Mostrar el resultado ---
+# Imprimimos la contraseña final.
+print("\n¡Tu nueva contraseña es!")
 print(contrasena)
